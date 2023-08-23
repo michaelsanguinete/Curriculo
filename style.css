@@ -1,0 +1,457 @@
+/*Importando fontes Google*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+/*configuração de variáveis*/
+/*Paleta de cores escolhida: https://www.canva.com/colors/color-palettes/bubblegum-sweetness/*/
+:root {
+  --midnight-blue: #0C6170;
+  --blue-green: #37BEB0;
+  --tiffany-blue: #A4E5E0;
+  --baby-blue: #DBF5F0;
+}
+/*Configurações genéricas do site*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+h4 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+h5 {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+p, a {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+section {
+  background-color: var(--tiffany-blue);
+  margin: 0 auto;
+  padding: 2.5% 10%;
+}
+
+input:focus, select:focus {
+  outline: none;
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color: #fff;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+::placeholder { /* Chrome */
+  color: #fff;
+}
+/*Configurações do header: menu e caixa de pesquisa*/
+header {
+  align-items: center;
+  background-color: var(--midnight-blue);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.menu ul {
+  display: flex;
+}
+
+.menu li {
+  border-left: 1px solid #fff;
+  list-style: none;
+  padding: 0 10px;
+}
+
+.menu li:first-child {
+  border-left: none;
+}
+
+.menu li a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu li a:hover {
+  color: #999;
+}
+
+.buscar {
+  position: relative;
+}
+
+.buscar i {
+  color: #fff;
+  font-size: 16px;
+  left: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.buscar input, #projetos select {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 10px 10px 35px;
+}
+
+#projetos select {
+  padding: 10px;
+  border-color: #000;
+  color: #000;
+}
+/*Configurações da seção perfil*/
+#perfil {
+  align-items: center;  
+  display: flex;
+  justify-content: center;
+  padding-top: calc(2.5% + 70px);
+}
+
+#perfil .img-container {
+  padding: 10px 20px;
+  width: 35%;
+}
+
+.photo-perfil{
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+#perfil .img-container img {
+  height: 100%;
+  width: 100%;
+}
+
+#perfil .perfil-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+  padding: 10px 20px;
+  flex-grow: 1;
+}
+
+#perfil .text-container {
+  width: 100%;
+  flex-grow: 1;
+}
+
+
+#perfil .redes-sociais-container .redes-sociais {
+  display: flex;
+  padding: 0;
+}
+
+#perfil .redes-sociais-container .redes-sociais li {
+  list-style: none;
+  margin: 10px 20px;
+}
+
+#perfil .redes-sociais-container .redes-sociais li:first-child {
+  margin-left: 0;
+}
+
+#perfil .redes-sociais-container .redes-sociais li a, .projeto a, .repositorio .icone a, .conteudo-recomendacao a {
+  color: var(--midnight-blue);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#perfil .redes-sociais-container .redes-sociais li a:hover, .projeto a:hover, .repositorio .icone a:hover, .conteudo-recomendacao a:hover {
+  opacity: 0.8;
+}
+
+#perfil .redes-sociais-container .redes-sociais li i {
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 30px;
+  padding: 15px;
+  transition: 0.3s ease-in-out;
+}
+
+#perfil .redes-sociais-container .redes-sociais li i:hover {
+  transform: scale(1.15);
+}
+/*Configurações da seção projetos*/
+#projetos .topo-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 50px
+}
+
+#projetos .topo-container #categorias {
+  font-weight: 600;
+  width: 250px;
+}
+
+#projetos .projetos  {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+#projetos .projetos .projeto {
+  text-align: center;
+}
+
+#projetos .projetos .projeto img {
+  height: 200px;
+  max-height: 100%;
+  max-width: 100%;
+  width: 200px;
+}
+
+#projetos .carregar-projetos, #experiencia .carregar-experiencias, #repositorios-github .carregar-repositorios, #conteudo .carregar-recomendacoes {
+  margin: 50px 0;
+  position: relative;
+  text-align: right;
+}
+
+#projetos .carregar-projetos a, #experiencia .carregar-experiencias a, #repositorios-github .carregar-repositorios a, #conteudo .carregar-recomendacoes a {
+  background-color: var(--midnight-blue);
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  padding: 15px 30px;
+  position: relative;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#projetos .carregar-projetos a:hover, #experiencia .carregar-experiencias a:hover, #repositorios-github .carregar-repositorios a:hover, #conteudo .carregar-recomendacoes a:hover {
+  opacity: 0.85;
+  transform: scale(0.9);
+}
+
+#projetos .carregar-projetos i, #experiencia .carregar-experiencias i, #repositorios-github .carregar-repositorios i, #conteudo .carregar-recomendacoes i {
+  color: #fff;
+  left: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/*Configurações da seção experiência*/
+#experiencia .topo-container, #repositorios-github .topo-container, #conteudo .topo-container {
+  margin-bottom: 40px;
+}
+
+#experiencia .descricoes .cargo {
+  align-items: center;
+  border-bottom: 1px solid var(--baby-blue);
+  display: flex;
+  justify-content: center;
+  padding: 2.5% 0;
+}
+
+#experiencia .descricoes .cargo:last-child {
+  border-bottom: none;
+}
+
+#experiencia .descricoes .logo-empresa {
+  margin-right: 5%;
+  width: 30%;
+}
+
+#experiencia .descricoes .descricao-cargo {
+  width: 70%;
+}
+
+#experiencia .descricoes .logo-empresa img {
+  max-width: 100%;
+  width: 300px;
+}
+/*Configurações da seção repositórios*/
+#repositorios-github {
+  background-color: var(--baby-blue);
+  padding: 2.5% 5%;
+}
+
+#repositorios-github .descricoes {
+  display: flex;
+}
+
+#repositorios-github .descricoes .repositorio {
+  display: flex;
+  margin-right: 25px;
+}
+
+#repositorios-github .descricoes .repositorio:last-child {
+  margin-right: 0;
+}
+
+#repositorios-github .descricoes .repositorio .icone i {
+  background-color: var(--tiffany-blue);
+  border: 1px solid transparent;
+  border-radius: 50%;
+  font-size: 40px;
+  margin: 20px 20px 0 0;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+#repositorios-github .descricoes .repositorio .icone i:hover {
+  transform: translateY(-10px);
+}
+/*Configurações da seção conteúdo*/
+#conteudo .carregar-recomendacoes {
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--baby-blue);
+}
+
+#conteudo .recomendacoes {
+  display: flex;
+  justify-content: space-between;  
+}
+
+#conteudo .recomendacoes .recomendacao {
+  margin-right: 40px;
+  width: 33.33%;
+}
+
+#conteudo .recomendacoes .recomendacao:last-child {
+  margin-right: 0;
+}
+
+#conteudo .recomendacoes .recomendacao .conteudo-recomendacao .roteiro-estreia {
+  display: flex;
+  justify-content: space-between;
+}
+/*Configurações do footer*/
+footer {
+  align-items: center;
+  background-color: var(--midnight-blue);
+  border-top: 1px solid #fff;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  min-height: 100px;
+  padding: 1.25% 10%;
+}
+
+footer img {
+  width: 100px;
+}
+
+#experiencias-extras {
+  display: none;
+}
+/*Configurações no mobile*/
+@media (max-width: 767px) {
+  h2 {
+    font-size: 30px;
+  }
+  
+  h4 {
+    font-size: 22px;
+  }
+  
+  h5 {
+    font-size: 20px;
+  }
+  
+  p {
+    font-size: 15px;
+  }
+
+  section {
+    padding: 2.5% 5%;
+  }
+
+  header {
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100vw;
+    position: relative;
+  }
+  .menu ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .menu ul a {
+    font-size: 14px;
+  }
+  /*Seção perfil*/
+  #perfil {
+    flex-direction: column;
+    padding-top: 2.5%;
+  }
+
+  #perfil .perfil-container {
+    min-height: 200px;
+  }
+
+  #perfil .img-container {
+    width: 100%;
+  }
+
+  #perfil .redes-sociais-container .redes-sociais li i {
+    font-size: 30px;
+  }
+  /*Seção experiência*/
+  #experiencia .descricoes .cargo {
+    padding: 15% 0;
+  }
+  /*Seção projetos*/
+  #projetos .topo-container, #projetos .projetos, #repositorios-github .descricoes, #conteudo .recomendacoes, #experiencia .descricoes .cargo, #repositorios-github .descricoes .repositorio, footer {
+    flex-direction: column;
+  }
+
+  #experiencia .descricoes .logo-empresa {
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+  }
+  /*Seção conteúdo*/
+  #conteudo .recomendacoes .recomendacao {
+    margin-right: 0;
+  }
+  #conteudo .recomendacoes .recomendacao {
+    margin-bottom: 10%;
+    width: 100%;
+  }
+
+  #conteudo .recomendacoes .recomendacao:last-child {
+    margin-bottom: 0;
+  }
+  /*Footer*/
+  footer {
+    text-align: center;
+  }
+}
